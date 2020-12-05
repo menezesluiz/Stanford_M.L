@@ -16,7 +16,28 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-
+    
+    % Iteration Implementation
+    % number-of-thetas = length(theta);
+    % new_theta = zeros(number-of-thetas,1);
+    % for j = 1:number-of-thetas
+    %   sum-of-pred-devi = 0;
+    %   for i = 1:m
+    %   %h(x)=X*theta
+    %   hx = X(i,:) * theta;
+    %   predic-deviation = (hx - y(i,:))*X(i,j);
+    %   sum-of-pred-devi = sum-of-pred-devi + predic-deviation;
+    % end
+    % new_theta(j) = theta(j) - (alpha/m) * sum-of-pred-devi;
+    % end
+    % theta = new_theta;
+    
+    
+    % Vectorized implementation 
+    derivate = (X'*(X*theta - y))/m;
+    theta = theta - alpha*derivate;
+    
+    
 
 
 

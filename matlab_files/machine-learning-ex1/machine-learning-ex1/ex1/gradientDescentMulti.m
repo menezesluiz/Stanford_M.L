@@ -18,14 +18,11 @@ for iter = 1:num_iters
     %
 
 
-
-
-
-
-
-
-
-
+    % Vectorized implementation 
+    derivate = (X'*(X*theta - y))/m;
+    theta = theta - alpha*derivate;
+    
+    
 
     % ============================================================
 
